@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area Calculator</title>
+
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <form class="area" id="main" action="">
+      <div class="form-items">
+        <div class="sideline"></div>
+        <h2>Area Calculator</h2>
+        <div class="sideline"></div>
+      </div>
+
+      <label for="height" class="dimension">Height in inch</label>
+      <input type="number" id="height" required />
+      <br />
+      <label for="width" class="dimension">Width in inch</label>
+      <input type="number" id="width" required />
+      <br />
+      <button type="submit" class="btn">Calculate Area</button>
+    </form>
+
+    <p id="area"></p>
+
+    <script src="area.js"></script>
+  </body>
+</html>
