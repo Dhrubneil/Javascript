@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geom Calculator</title>
+
+    <link rel="stylesheet" href="./main.css" />
+    <!-- <link rel="stylesheet" href="./new.css" /> -->
+  </head>
+  <body>
+    <div class="status" id="obj-op"></div>
+    <div class="new-status" id="obj-op-1"></div>
+
+    <div class="formula" id="formula-1">formula</div>
+
+    <div class="triangle-info">
+      <p class="warn">WARNING!</p>
+      <p class="message">
+        Triangle Operations are Incomplete and Not Defined Yet
+      </p>
+    </div>
+
+    <form class="area" id="main" action="">
+      <div class="form-items">
+        <div class="sideline"></div>
+        <h2>Geom Calculator</h2>
+        <div class="sideline"></div>
+      </div>
+
+      <!-- more icon -->
+      <div class="more" id="more-icon">
+        <span>
+          <b>More</b>
+          <i class="fas fa-angle-double-down"></i>
+        </span>
+      </div>
+
+      <!-- <label for="unit">Choose Unit</label>
+
+      <select name="" id="unit">
+        <option value="Default">Choose</option>
+        <option value="Centimeter">Centimeter</option>
+        <option value="Meter">Meter</option>
+        <option value="Inch">Inch</option>
+        <option value="Foot">Foot</option>
+      </select> -->
+
+      <!-- the parent container carrying the whole  select box -->
+      <div class="containerIn">
+        <div class="select-box">
+          <!-- options container carrying the  options -->
+          <div class="options-container">
+            <!-- single option -->
+            <div class="option">
+              <input type="radio" class="radio" id="centimeter" name="unit" />
+              <label for="centimeter">Centimeter</label>
+            </div>
+
+            <!-- single option -->
+            <div class="option">
+              <input type="radio" class="radio" id="meter" name="unit" />
+              <label for="meter">Meter</label>
+            </div>
+
+            <!-- single option -->
+            <div class="option">
+              <input type="radio" class="radio" id="inch" name="unit" />
+              <label for="inch">Inch</label>
+            </div>
+
+            <!-- single option -->
+            <div class="option">
+              <input type="radio" class="radio" id="foot" name="unit" />
+              <label for="foot">Foot</label>
+            </div>
+          </div>
+          <div class="selected">Select A Unit</div>
+        </div>
+      </div>
+
+      <!-- more options -->
+      <div class="more-options" id="more-ops"></div>
+
+      <label for="length" class="dimension hide" id="llength">Length in </label>
+      <input type="number" step="any" id="length" class="hide" />
+
+      <label for="height" class="dimension" id="lheight">Height in </label>
+      <input type="number" step="any" id="height" required />
+      <!-- <br /> -->
+
+      <label for="slant-height" class="dimension hide" id="lslant-height"
+        >Slant Height in
+      </label>
+      <input type="number" step="any" id="slant-height" class="hide" />
+
+      <label for="width" class="dimension" id="lwidth">Width in </label>
+      <input type="number" step="any" id="width" required />
+      <!-- <br /> -->
+
+      <label for="radius" class="dimension hide" id="lradius">Radius in </label>
+      <input type="number" step="any" id="radius" class="hide" />
+
+      <button type="submit" class="btn" id="calc-btn">Calculate Area</button>
+    </form>
+
+    <p id="area"></p>
+
+    <p id="area1"></p>
+
+    <div class="calc-again">
+      <button type="submit" id="again">Calculate New</button>
+    </div>
+    <div class="calc-again1">
+      <button type="submit" id="again1">Calculate New</button>
+    </div>
+
+    <script src="./all.js"></script>
+    <script src="area.js"></script>
+  </body>
+</html>
