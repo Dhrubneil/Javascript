@@ -1,0 +1,1045 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: monospace;
+  overflow: auto;
+}
+body {
+  background: url("./pexels-josh-sorenson-1714205.jpg") center/cover no-repeat;
+}
+
+.area {
+  position: relative;
+
+  /* newly defined */
+  /*position: absolute;
+  /* top: 0%; */
+  /* left: calc(50% - 250px); */
+  /*  */
+  max-width: 500px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 2rem;
+  background: gray;
+  width: 40vw;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3rem;
+  opacity: 0.5;
+  transition: 0.5s ease-in;
+
+  /* previously  defined as*/
+  /* 
+  position: relative;
+  top: -20%; 
+  margin-top: 5rem;
+  */
+}
+
+.area:hover {
+  box-shadow: 2px 5px 5px seagreen;
+  transform: scale(1.1);
+
+  opacity: 0.8;
+}
+
+.form-items {
+  letter-spacing: 1px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.sideline {
+  margin: 0 0.5rem;
+  width: 25%;
+  height: 1px;
+  border-bottom: 3px solid black;
+  transition: 0.5s linear;
+}
+
+@keyframes redBlink {
+  0% {
+    border-bottom: 4px solid rgb(182, 93, 93);
+  }
+  25% {
+    border-bottom: 3px solid black;
+  }
+  50% {
+    border-bottom: 4px solid rgb(182, 93, 93);
+  }
+  75% {
+    border-bottom: 3px solid black;
+  }
+  100% {
+    border-bottom: 4px solid rgb(182, 93, 93);
+  }
+}
+
+@keyframes redBlink1 {
+  0% {
+    background: rgb(182, 93, 93);
+    opacity: 0.8;
+  }
+  25% {
+    background: grey;
+    opacity: 0.5;
+  }
+  50% {
+    background: rgb(182, 93, 93);
+    opacity: 0.8;
+  }
+  75% {
+    background: grey;
+    opacity: 0.5;
+  }
+  100% {
+    background: rgb(182, 93, 93);
+    opacity: 0.8;
+  }
+}
+
+@keyframes greenBlink {
+  0% {
+    border-bottom: 4px solid forestgreen;
+  }
+  25% {
+    border-bottom: 3px solid black;
+  }
+  50% {
+    border-bottom: 4px solid forestgreen;
+  }
+  75% {
+    border-bottom: 3px solid black;
+  }
+  100% {
+    border-bottom: 4px solid forestgreen;
+  }
+}
+
+@keyframes greenBlink1 {
+  0% {
+    background: forestgreen;
+    opacity: 0.8;
+  }
+  25% {
+    background: grey;
+    opacity: 0.5;
+  }
+  50% {
+    background: forestgreen;
+    opacity: 0.8;
+  }
+  75% {
+    background: grey;
+    opacity: 0.5;
+  }
+  100% {
+    background: forestgreen;
+    opacity: 0.8;
+  }
+}
+
+/* the double-down button to show the more-options */
+.more {
+  text-align: center;
+  font-size: 1.2rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* more-options area */
+.more-options {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-weight: bold;
+
+  width: 240px;
+  height: 200px;
+  border-radius: 0.25rem;
+  background: #2f3640;
+  color: #f5f6fa;
+  opacity: 0.8;
+  transform: translateX(-50%);
+  transform: scale(0);
+
+  transition: all 1s ease-in-out;
+  /* animation: ripple 2s 1 linear forwards; */
+}
+
+.more-options .objects-list {
+  max-height: 90%;
+  overflow: hidden;
+}
+.more-options .objects-list:hover {
+  overflow: auto;
+}
+/* designing scrollbar and thumb */
+.more-options .objects-list::-webkit-scrollbar {
+  background: #171e22;
+  width: 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: all 0.5s ease;
+}
+.more-options .objects-list::-webkit-scrollbar-thumb {
+  background: seagreen;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: all 0.5s ease;
+}
+
+.objects-list {
+  list-style-type: none;
+}
+.object {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.object:hover {
+  background: seagreen;
+}
+.object-ops {
+  list-style-type: none;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.opt {
+  margin-bottom: 4px;
+  margin-left: 1.5rem;
+}
+.opt:hover {
+  padding: 0.5rem;
+  background: #171e22;
+  color: seagreen;
+  transform: scale(1.2);
+  transition: all 0.25s linear;
+}
+
+.show-ops {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: auto;
+  transition: all 0.5s linear;
+}
+
+#collapse-icon {
+  color: rgb(218, 74, 74);
+}
+
+#collapse-icon h3 {
+  display: inline;
+  cursor: pointer;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0;
+    width: 50px;
+  }
+  25% {
+    opacity: 0;
+    width: 100px;
+    left: 40%;
+    transform: rotateY(180deg) scale(0.25);
+  }
+  50% {
+    opacity: 0.4;
+    width: 150px;
+
+    left: 50%;
+    transform: rotateY(360deg) scale(0.5);
+  }
+  75% {
+    opacity: 0.6;
+    width: 200px;
+
+    left: 60%;
+    transform: rotateY(180deg) scale(0.75);
+  }
+  100% {
+    opacity: 0.8;
+    width: 250px;
+
+    left: 70%;
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+.dimension {
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#height,
+#width,
+#radius,
+#length,
+#slant-height {
+  height: 2rem;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  margin-bottom: 2rem;
+  transition: 0.5s ease-out;
+}
+
+#height,
+#width {
+  display: block;
+}
+
+#radius,
+#length,
+#slant-height {
+  display: none;
+}
+
+#height:focus,
+#width:focus,
+#radius:focus,
+#length:focus,
+#slant-height:focus {
+  transform: scale(1.1);
+}
+
+#height:hover,
+#width:hover,
+#radius:hover,
+#length:hover,
+#slant-height:hover {
+  background: seagreen;
+}
+
+/* hiding arrows in input field */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  background: seagreen;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  /* display: block; */
+  /* display block disturbs while calculating circle's attributes */
+  background: forestgreen;
+}
+
+#area {
+  position: relative;
+  top: 3%;
+  display: none;
+  width: 45%;
+  background: rgb(182, 93, 93);
+  border-radius: 5px;
+  padding: 2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.5s;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* area1 */
+
+.calc-again {
+  position: relative;
+  top: 0%;
+  margin: 0 auto;
+  width: 20vw;
+  display: none;
+
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.calc-again1 {
+  position: relative;
+  margin: 0 auto;
+  width: 250px;
+  display: none;
+
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#again {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  background: seagreen;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+#again:hover {
+  background: forestgreen;
+}
+
+#again1 {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  background: seagreen;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+#again1:hover {
+  background: forestgreen;
+}
+
+.hide {
+  display: none;
+}
+
+.show-field {
+  display: block;
+}
+
+#area1 {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translateX(-100%);
+  display: none;
+  width: 250px;
+  height: 208px;
+  background: rgb(182, 93, 93);
+  border-radius: 5px;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.status {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: gray;
+  border-left: 10px solid seagreen;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  top: 5%;
+  left: 32%;
+  /* transform: translateX(0%); */
+  transition: all 0.5s linear;
+}
+
+.status.active {
+  opacity: 0.5;
+  visibility: visible;
+  transform: translateX(-111%);
+  transition: all 0.5s linear;
+}
+
+.status.active:hover {
+  opacity: 0.8;
+}
+
+.new-status {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: gray;
+  border-left: 10px solid seagreen;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  width: 250px;
+  height: 100px;
+
+  position: absolute;
+  top: 5%;
+  left: 32%;
+  /* transform: translateX(-100%); */
+  transition: all 0.5s linear;
+}
+
+.formula {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: white;
+  background: #171e22;
+  border-left: 5px solid rgb(218, 74, 74);
+
+  border-radius: 0px 0px 2px 2px;
+  opacity: 0;
+  width: 230px;
+  height: 0px;
+
+  position: absolute;
+  top: 20.4%;
+  left: 13%;
+  /* transform: translateX(-100%); */
+  transition: all 0.5s linear;
+}
+
+/* emphasizing */
+.emp {
+  color: rgb(255, 74, 74);
+  font-style: oblique;
+  font-size: 1.28rem;
+}
+
+.triangle-info {
+  padding: 1.5rem;
+  font-size: 2rem;
+  color: darkorange;
+  font-weight: bold;
+  display: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: gray;
+  border-left: 10px solid seagreen;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: 30%;
+  left: 12%;
+  opacity: 0.5;
+  animation: messageBlink 5s linear 1 forwards;
+}
+
+@keyframes messageBlink {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.75);
+    border: 1px solid darkorange;
+  }
+  20% {
+    opacity: 0.8;
+    transform: scale(1);
+    border: 5px solid darkorange;
+  }
+  40% {
+    opacity: 0.2;
+    transform: scale(0.75);
+    border: 1px solid darkorange;
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1);
+    border: 5px solid darkorange;
+  }
+  80% {
+    opacity: 0.2;
+    transform: scale(0.75);
+    border: 1px solid darkorange;
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+    border-left: 10px solid darkorange;
+  }
+}
+
+.warn {
+  transition: all 0.5s linear;
+}
+.triangle-info:hover .warn {
+  transform: translateY(-200%);
+}
+
+.triangle-info:hover .message {
+  opacity: 1;
+  left: 0%;
+  margin-left: 0.5rem;
+  display: flex;
+  visibility: visible;
+}
+.triangle-info .message {
+  font-size: 1.5rem;
+
+  max-width: 230px;
+
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -100%;
+  transition: all 0.5s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+/* wrote it for status card but not used yet
+3:53am 9sep 2021 */
+@keyframes show1 {
+  from {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+}
+
+/* unit selection */
+
+.containerIn {
+  margin-top: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
+.containerIn:hover {
+  opacity: 1;
+}
+
+.select-box {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.select-box .options-container {
+  background: #2f3640;
+  color: #f5f6fa;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  order: 1;
+}
+
+.select-box .option {
+  padding: 8px 24px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.select-box .selected {
+  background: seagreen;
+
+  color: #f5f6fa;
+  box-sizing: border-box;
+  padding: 8px 0px 8px 24px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  width: 100%;
+  transition: all 0.5s;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  order: 0;
+}
+
+.select-box .selected::after {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 45%;
+  right: 15px;
+  border: 6px solid transparent;
+  border-color: #f5f6fa transparent transparent transparent;
+  transition: all 0.5s ease;
+}
+
+.select-box .option:hover {
+  background: seagreen;
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+.select-box .option .radio {
+  display: none;
+}
+
+.select-box .options-container.active {
+  max-height: 100px;
+  opacity: 1;
+  overflow: auto;
+}
+
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: 8px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+  width: 6px;
+  background: #0d141f;
+  border-radius: 0px 0.25rem 0.25rem 0px;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+  background: seagreen;
+
+  border-radius: 0px 0.25rem 0.25rem 0px;
+}
+
+.selected {
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 576px) {
+  .select-box {
+    padding: 0.25rem;
+    width: 180px;
+  }
+  .selected {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1044px) {
+  .area {
+    top: -26%;
+    width: 50vw;
+  }
+  .area:hover {
+    transform: scale(1);
+  }
+
+  .form-items {
+    font-size: small;
+    margin-bottom: 0.5rem;
+  }
+
+  .more {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .containerIn {
+    margin: 5px;
+    padding: 0;
+  }
+
+  .dimension {
+    margin-bottom: 0.25rem;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-transform: capitalize;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .status {
+    top: 10%;
+    left: 25%;
+    width: 25%;
+    height: 150px;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    text-align: left;
+    align-items: center;
+  }
+
+  input {
+    height: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  #area1 {
+    top: -70%;
+    width: 25%;
+    height: 180px;
+    left: 25%;
+    padding: 0.52rem;
+    font-size: 1.1rem;
+    text-align: left;
+    align-items: center;
+    overflow: hidden;
+  }
+  #area {
+    width: 80vw;
+    max-width: 500px;
+    top: -26%;
+    font-size: 1.3rem;
+    padding: 0.75rem;
+  }
+
+  .calc-again {
+    width: 15rem;
+    top: -28%;
+  }
+
+  .calc-again1 {
+    width: 15rem;
+    transform: translateY(-100%);
+  }
+
+  body {
+    height: 100%;
+    background: url("./pexels-josh-sorenson-1714205.jpg") center/cover no-repeat;
+  }
+}
+
+/* log button */
+
+.log-btn {
+  padding: 0.5rem;
+  position: absolute;
+  top: 3%;
+  right: 40%;
+  min-width: 100px;
+  height: auto;
+  background: #5f1f3f;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  visibility: hidden;
+  transition: all 1s ease-out;
+  opacity: 0;
+}
+
+.log-btn:hover {
+  cursor: pointer;
+}
+.log-btn-text {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.log-icon {
+  width: 20%;
+  height: auto;
+}
+
+.icon-boundary {
+  border: 2px solid white;
+  border-radius: 2px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.25rem;
+}
+
+.icon-line {
+  height: 3px;
+  width: 75%;
+  background: white;
+  margin: 2px auto;
+}
+
+/* the parent log container consists of log-header and records area
+
+--log-header is actually a table that contains the table header only 
+
+--records area holds the actual log-table
+
+*/
+.log {
+  font-size: 1.25rem;
+  max-width: 350px;
+  min-width: 300px;
+  position: absolute;
+  top: 11%;
+  right: 2%;
+
+  background: #171e22;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 4px;
+  opacity: 0.8;
+  visibility: hidden;
+  max-height: 0px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in;
+}
+
+.show-log {
+  visibility: visible;
+  max-height: 350px;
+}
+
+/* the header of the log-table which is a table too but contains the header of the log-table only, not the records*/
+.log-header {
+  width: 100%;
+  background: #5f1f3f;
+  color: transparent;
+  border-radius: 4px;
+  visibility: hidden;
+  height: 0px;
+  font-size: 0px;
+  transition: all 0.75s ease-in;
+}
+
+.show-log-header {
+  visibility: visible;
+  padding: 1rem;
+  color: aliceblue;
+  font-size: 1.25rem;
+}
+
+/* the parent div that contains the entire log-table */
+.records {
+  margin-top: 0.5rem;
+  max-height: 290px;
+  overflow: scroll;
+  overflow-x: hidden;
+  transition: all 0.5s linear;
+}
+.records::-webkit-scrollbar {
+  background: #171e22;
+  width: 0.5rem;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: all 0.5s ease;
+}
+.records::-webkit-scrollbar-thumb {
+  background: #5f1f3f;
+  border-radius: 0 0.25rem 0.25rem 0;
+  transition: all 0.5s ease;
+}
+
+/* the log-table that contains the single records */
+.log-table {
+  border-radius: 4px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s linear;
+}
+
+/* single record, i.e. a single row of log-table */
+.record {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding: 0.275rem;
+  transition: 0.5s linear;
+  margin-bottom: 0.25rem;
+  border-bottom: 2px solid #5f1f3f;
+}
+
+.record:hover {
+  background: #5f1f3f;
+  color: aliceblue;
+}
+
+/* the operation part, i.e. the first column of a single record */
+.op {
+  width: 60%;
+}
+
+/* the result part of the oparation, i.e. the second column of a single record */
+.res {
+  text-align: center;
+}
