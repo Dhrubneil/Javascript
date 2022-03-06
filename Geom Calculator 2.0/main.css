@@ -1061,15 +1061,15 @@ switches
 ==========
 */
 .switch {
+  width: 400px;
   padding: 1rem;
   margin: 0 auto;
-  position: sticky;
+  position: fixed;
   top: 0;
-  /* left: calc(50% - 200px); */
+  left: calc(50% - 200px);
   z-index: 1;
   /* to make switch sit above while scrolling */
 
-  max-width: 400px;
   max-height: 100px;
   display: flex;
   justify-content: space-around;
@@ -1113,19 +1113,15 @@ switches
   visibility: hidden;
   opacity: 0;
   transition: all 1s ease-in;
-  /* background: red; */
 }
 
 .guide-body {
   width: 90vw;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
   padding: 0rem 2rem;
-  /* background: green; */
   box-sizing: border-box;
-  margin-left: 5vw;
+  margin-left: 7vw;
 }
 
 .component {
@@ -1189,7 +1185,7 @@ designs for features page
 */
 .features {
   width: 90vw;
-  margin-left: calc(50% - 45vw);
+  margin-left: 5vw;
   position: absolute;
   top: 10%;
   background: #171e22;
@@ -1199,7 +1195,7 @@ designs for features page
   opacity: 0;
   transition: all 1s ease-in;
   color: white;
-  height: 650px;
+  height: 700px;
   box-shadow: 2px 2px 5px white;
 }
 
