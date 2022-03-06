@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geom Calculator</title>
+
+    <link rel="stylesheet" href="./main.css" />
+    <!-- <link rel="stylesheet" href="./new.css" /> -->
+  </head>
+  <body>
+    <div class="switch">
+      <div class="sw-btn" id="sw-guide">Guide</div>
+      <div class="sw-btn" id="sw-main">Calculator</div>
+      <div class="sw-btn" id="sw-feature">Features</div>
+    </div>
+    <div class="calculator" id="calculator">
+      <div class="status" id="obj-op"></div>
+      <div class="new-status" id="obj-op-1"></div>
+
+      <div class="formula" id="formula-1">formula</div>
+
+      <div class="triangle-info">
+        <p class="warn">WARNING!</p>
+        <p class="message">
+          Triangle Operations are Incomplete and Not Defined Yet
+        </p>
+      </div>
+
+      <form class="area" id="main" action="">
+        <div class="form-items">
+          <div class="sideline"></div>
+          <h2>Geom Calculator</h2>
+          <div class="sideline"></div>
+        </div>
+
+        <!-- more icon -->
+        <div class="more" id="more-icon">
+          <span>
+            <b>More</b>
+            <i class="fas fa-angle-double-down"></i>
+          </span>
+        </div>
+
+        <!-- <label for="unit">Choose Unit</label>
+
+      <select name="" id="unit">
+        <option value="Default">Choose</option>
+        <option value="Centimeter">Centimeter</option>
+        <option value="Meter">Meter</option>
+        <option value="Inch">Inch</option>
+        <option value="Foot">Foot</option>
+      </select> -->
+
+        <!-- the parent container carrying the whole  select box -->
+        <div class="containerIn">
+          <div class="select-box">
+            <!-- options container carrying the  options -->
+            <div class="options-container">
+              <!-- single option -->
+              <div class="option">
+                <input type="radio" class="radio" id="centimeter" name="unit" />
+                <label for="centimeter">Centimeter</label>
+              </div>
+
+              <!-- single option -->
+              <div class="option">
+                <input type="radio" class="radio" id="meter" name="unit" />
+                <label for="meter">Meter</label>
+              </div>
+
+              <!-- single option -->
+              <div class="option">
+                <input type="radio" class="radio" id="inch" name="unit" />
+                <label for="inch">Inch</label>
+              </div>
+
+              <!-- single option -->
+              <div class="option">
+                <input type="radio" class="radio" id="foot" name="unit" />
+                <label for="foot">Foot</label>
+              </div>
+            </div>
+            <div class="selected">Select A Unit</div>
+          </div>
+        </div>
+
+        <!-- more options -->
+        <div class="more-options" id="more-ops"></div>
+
+        <label for="length" class="dimension hide" id="llength"
+          >Length in
+        </label>
+        <input type="number" step="any" id="length" class="hide" />
+
+        <label for="height" class="dimension" id="lheight">Height in </label>
+        <input type="number" step="any" id="height" required />
+        <!-- <br /> -->
+
+        <label for="slant-height" class="dimension hide" id="lslant-height"
+          >Slant Height in
+        </label>
+        <input type="number" step="any" id="slant-height" class="hide" />
+
+        <label for="width" class="dimension" id="lwidth">Width in </label>
+        <input type="number" step="any" id="width" required />
+        <!-- <br /> -->
+
+        <label for="radius" class="dimension hide" id="lradius"
+          >Radius in
+        </label>
+        <input type="number" step="any" id="radius" class="hide" />
+
+        <button type="submit" class="btn" id="calc-btn">Calculate Area</button>
+      </form>
+
+      <p id="area"></p>
+
+      <p id="area1"></p>
+
+      <div class="calc-again">
+        <button type="submit" id="again">Calculate New</button>
+      </div>
+      <div class="calc-again1">
+        <button type="submit" id="again1">Calculate New</button>
+      </div>
+
+      <!-- log-button -->
+      <div class="log-btn">
+        <div class="log-btn-text">Show Log</div>
+        <div class="log-icon">
+          <div class="icon-boundary">
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+            <div class="icon-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- log container -->
+      <div class="log">
+        <!-- log-table header -->
+        <div class="header">
+          <table class="log-header">
+            <tr>
+              <th>Operation</th>
+              <th>Result</th>
+            </tr>
+          </table>
+        </div>
+
+        <!-- log-table container -->
+        <div class="records">
+          <table class="log-table" id="log-table">
+            <!-- <tr class="record">
+            <td class="op">Area of Circle</td>
+            <td class="res">100 sq meter</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Area of Rectangular Cube</td>
+            <td class="res">600 sq meter</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Diagonal Length of Rectangular Cube</td>
+            <td class="res">600 sqm</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Diagonal Length of Rectangular Cube</td>
+            <td class="res">1600.000 sq meter</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Diagonal Length of Rectangular Cube</td>
+            <td class="res">1600.000 sq meter</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Diagonal Length of Rectangular Cube</td>
+            <td class="res">1600.000 sq meter</td>
+          </tr>
+          <tr class="record">
+            <td class="op">Diagonal Length of Rectangular Cube</td>
+            <td class="res">1600.000 sq meter</td>
+          </tr> -->
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide" id="guide">
+      <div class="guide-body">
+        <div class="component" id="the-default-interface">
+          <div class="title-header">Default Interface</div>
+          <div class="description">
+            <p>This is the first view of the form and the whole webpage when the page is first loaded. At this stage only the area of a rectangle can be calculated and the default unit is "inch" if not selected any. Since no object is selected from the "More Option", it will be considered as an undefined object.</p>
+          </div>
+        </div>
+        <div class="component" id="the-more-icon">
+          <div class="title-header">More Option</div>
+          <div class="description">
+            <p>More Icon helps to show the available objects and their operations. Clicking on an object, the available operations are visible. Choosing one of them makes the "Status Card" slide out left which holds the slected object-operation on it.</p>
+          </div>
+        </div>
+        <div class="component" id="the-status-card">
+          <div class="title-header">Status Card</div>
+          <div class="description">
+            <p>Status card holds the selected object-operation. Keeping the cursor on it shows the formula used to calculate the current operation. On a successful calculation it blinks with green color and red color on failure for 5 seconds. Clicking on "Calculate New" button makes it disappear.</p>
+          </div>
+        </div>
+        <div class="component" id="the-calculate-new">
+          <div class="title-header">Result Area</div>
+          <div class="description">
+            <p>This area is visible next to the "Geom Calculator" form after a calculation is performed. If a result is valid, i.e. all the fields in the form are positive, it appears with green color holding the result of the current object-operation and with red if any of the fields is negative. The result is rounded to 5 decimal places.</p>
+          </div>
+        </div>
+        <div class="component" id="the-calculate-new">
+          <div class="title-header">Calculate New</div>
+          <div class="description">
+            <p>It appears after a calculation. Clicking on it, "Default Interface" is preserved partially by setting the unit to "inch", removing the last input values and hiding the "Result Area", "Status Card" and itself as well. Some stylings from the previous calculation - green/red sidelines on the top of the form, input field color and the form shadow color - and the "Log Button" will still be there.</p>
+          </div>
+        </div>
+        <div class="component" id="the-log-button">
+          <div class="title-header">Log Button</div>
+          <div class="description">
+            <p>Log button slides out to the right of the form once a calculation is done and stays there unless the page is not reloaded. Clicking "Calculate New" button will not hide it. Clicking on it the "Log Table" gets expanded and the text toggles to "Hide Log" which closes the table.</p>
+          </div>
+        </div>
+        <div class="component" id="the-log-button">
+          <div class="title-header">Log Table</div>
+          <div class="description">
+            <p>The table contains the results in descending time order. An "Invalid" result is displayed in red and white otherwise.The results are rounded to 2 decimal places and units are in short forms. A default "Calculate Area" operation has it's operation name "Undefined Object's Area" in the "Operation" column of the table.</p>
+          </div>
+        </div>
+        <div class="component" id="the-warning-animation">
+          <div class="title-header">Warning Animation</div>
+          <div class="description">
+            <p>In the "More Option" area there may have object(s) whose operations are not defined and incomplete. Clicking on that object triggers a "WARNING" box to appear left to the form which goes in and out of the screen. Keeping the cursor over the box shows the corresponding warning message. It is suggested not to do any operation on that object for which a "WARNING" appears.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features" id="features">
+      <div class="feature-header">
+        Geom Calculator performs the common operations on some geometrical
+        objects(shapes). Here is the list of the currently available objects and object-operations
+        with the operation formulas.
+        <br />
+        <br />
+         The short form for height = h, length = l(for cone, it's the slant height), width = b and
+        radius = r is used and also &#960; is rounded to 3.1416 .
+      </div>
+      <table class="ft-list-header">
+        <tr class="">
+          <th class="ft-object-h">Object/Shape</th>
+          <th class="ft-operation-h">Operations</th>
+          <th class="ft-formula-h">Formula</th>
+        </tr>
+      </table>
+      <div class="list-container">
+      <table class="ft-list">
+        <tr class="ft-record">
+          <td class="ft-object">Rectangle</td>
+          <td class="ft-operation">
+            <li>Area</li>
+            <li>Perimeter</li>
+          </td>
+          <td class="ft-formula">
+            <li>h x b</li>
+            <li>2 x (h + b)</li>
+          </td>
+        </tr>
+        <tr class="ft-record">
+          <td class="ft-object">Circle</td>
+          <td class="ft-operation">
+            <li>Area</li>
+            <li>Circumference</li>
+          </td>
+          <td class="ft-formula">
+            <li class="sq">&#960; x r<sup>2</sup></li>
+            <li>2 x &#960; x r</li>
+          </td>
+        </tr>
+        <tr class="ft-record">
+          <td class="ft-object">Square</td>
+          <td class="ft-operation">
+            <li>Area</li>
+            <li>Perimeter</li>
+          </td>
+          <td class="ft-formula">
+            <li class="sq">side<sup>2</sup></li>
+            <li>4 x side</li>
+          </td>
+        </tr>
+        <tr class="ft-record">
+          <td class="ft-object">Cylinder</td>
+          <td class="ft-operation">
+            <li class="expanded" id="cyl-exp-op-1">Area</li>
+            <li>Base Area</li>
+            <li class="expanded" id="cyl-exp-op">Curved Area</li>
+            <li>Volume</li>
+          </td>
+          <td class="ft-formula">
+            <li>2 x &#960; x r x (r + h)</li>
+            <li class="sq">2 x &#960; x r<sup>2</sup></li>
+            <li>2 x &#960; x r x h</li>
+            <li class="sq expanded-res">&#960; x r<sup>2</sup> x h</li>
+          </td>
+        </tr>
+        <tr class="ft-record">
+          <td class="ft-object">Rectangular Cube</td>
+          <td class="ft-operation">
+            <li class="expanded" id="rc-exp-op">Area</li>
+            <li>Volume</li>
+            <li>Diagonal Length</li>
+          </td>
+          <td class="ft-formula">
+            <li>2 x (lxb + bxh + hxl)</li>
+            <li>l x  b x h</li>
+            <li class="sq">&radic;(l<sup>2</sup> + h<sup>2</sup> + b<sup>2</sup></sup>)</li>
+          </td>
+        </tr>
+        <tr class="ft-record">
+          <td class="ft-object">Cone</td>
+          <td class="ft-operation">
+            <li class="expanded" id="cn-exp-op">Area</li>
+            <li>Base Area</li>
+            <li>Curved Area</li>
+            <li class="expanded" id="cn-exp-op-1">Volume</li>
+            <li>Slant Height</li>
+          </td>
+          <td class="ft-formula">
+            <li>&#960; x r x (r + l)</li>
+            <li class="sq">&#960; x r<sup>2</sup></li>
+            <li>&#960; x r x l</li>
+            <li class="sq">1/3 x &#960; x r<sup>2</sup> x h</li>
+            <li class="sq expanded-res">&radic;(r<sup>2</sup> + h<sup>2</sup>)</li>
+          </td>
+        </tr>
+           <tr class="ft-record">
+          <td class="ft-object default">Default => Undefined Object</td>
+          <td class="ft-operation default">Area
+          </td>
+          <td class="ft-formula default">Area of a 2D Rectangle</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+
+    <script src="./all.js"></script>
+    <script src="area.js"></script>
+  </body>
+</html>
