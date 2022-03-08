@@ -1381,6 +1381,11 @@ designs for features page
     padding-bottom: 2rem;
   }
 }
+
+@media screen and (min-width: 1026px){
+  #rc-exp-op{
+    padding-bottom: 0.5rem;
+}
 @media screen and (min-width: 1122px) {
   .features {
     height: 550px;
