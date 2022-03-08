@@ -1377,9 +1377,9 @@ designs for features page
     padding-left: 7rem;
   }
 
-  #rc-exp-op {
+/*   #rc-exp-op {
     padding-bottom: 2rem;
-  }
+  } */
 }
 
 @media screen and (min-width: 1026px){
